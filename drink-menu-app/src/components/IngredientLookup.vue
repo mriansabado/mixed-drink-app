@@ -30,44 +30,43 @@ export default {
         </div>
         <div class="box results-column">
             <div v-for="info in results">
-                <h1 class="is-size-1">{{ this.ingredient }}</h1>
-                <p>{{ info[0]  }}</p>
+                    <div class="card-wrap">
+                        <div class="card">
+                        <div class="card-image">
+                            <figure class="image is-4by3 main-image">
+                            <img v-bind:src="info[0].strDrinkThumb" alt="Placeholder image">
+                            </figure>
+                        </div>
+                        <div class="card-content">
+                            <div class="media">
+                            <div class="media-left">
+                                <figure class="image is-12x12">
+                                <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
+                                </figure>
+                            </div>
+                            <div class="media-content">
+                                <p class="title is-4">{{ info[0].strDrink }}</p>
+                                 <div class="content">
+                                    {{ info[0].strInstructions }}
+                                    <br>
+                                    {{ info[0].strIngredient1 }},
+                                    {{ info[0].strIngredient2 }},
+                                    {{ info[0].strIngredient3 }},
+                                    {{ info[0].strIngredient4 }},
+                                    {{ info[0].strIngredient5 }}
+                                 </div>
+                            </div>
+                            </div>
+
+                           
+                        </div>
+                        </div>
+                    </div>
             </div>
         </div>
     </div>
     <br>
-    <div class="card-wrap">
-<div class="card">
-  <div class="card-image">
-    <figure class="image is-4by3">
-      <img src="https://bulma.io/images/placeholders/11x960.png" alt="Placeholder image">
-    </figure>
-  </div>
-  <div class="card-content">
-    <div class="media">
-      <div class="media-left">
-        <figure class="image is-12x12">
-          <img src="https://bulma.io/images/placeholders/96x96.png" alt="Placeholder image">
-        </figure>
-      </div>
-      <div class="media-content">
-        <p class="title is-4">John Smith</p>
-        <p class="subtitle is-6">@johnsmith</p>
-      </div>
-    </div>
 
-    <div class="content">
-      Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-      Phasellus nec iaculis mauris. <a>@bulmaio</a>.
-      <a href="#">#css</a> <a href="#">#responsive</a>
-      <br>
-      <time datetime="2016-1-1">11:09 PM - 1 Jan 2016</time>
-    </div>
-  </div>
-</div>
-
-        
-    </div>
 </div>
 </template>
 
@@ -76,8 +75,12 @@ export default {
         overflow: scroll;
     }
     .main-wrap {
-        height: 500px;
+        height: 600px;
         width: 80vw;
         background-color: pink;
     }
+    .main-image {
+        display: flex;
+    }
+   
 </style>
